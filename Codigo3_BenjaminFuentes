@@ -1,0 +1,81 @@
+#include <stdio.h>
+
+char respuesta;
+
+typedef struct {
+    int edad;
+    char iniciales[5];
+    char tipoSangre[5];
+    float altura;
+} datosPaciente;
+
+datosPaciente persona;
+
+void modificar() {
+    int opcion;
+
+    printf("Que dato desea modificar?\n");
+    printf("1- Edad\n");
+    printf("2- Iniciales\n");
+    printf("3- Sangre\n");
+    printf("4- Altura\n");
+    scanf("%d", &opcion);
+
+    switch(opcion) {
+        case 1:
+            printf("Nueva edad:\n");
+            scanf("%d", &persona.edad);
+            break;
+
+        case 2:
+            printf("Nuevas iniciales:\n");
+            scanf("%4s", persona.iniciales);
+            break;
+
+        case 3:
+            printf("Nuevo tipo de sangre:\n");
+            scanf("%4s", persona.tipoSangre);
+            break;
+
+        case 4:
+            printf("Nueva altura:\n");
+            scanf("%f", &persona.altura);
+            break;
+    }
+}
+
+int main() {
+    printf("Ingrese la edad:\n");
+    scanf("%d", &persona.edad);
+
+    printf("Ingrese las iniciales:\n");
+    scanf("%4s", persona.iniciales);
+
+    printf("Ingrese el tipo de sangre:\n");
+    scanf("%4s", persona.tipoSangre);
+
+    printf("Ingrese la altura:\n");
+    scanf("%f", &persona.altura);
+
+    printf("Edad: %d\n", persona.edad);
+    printf("Iniciales: %s\n", persona.iniciales);
+    printf("Tipo de sangre: %s\n", persona.tipoSangre);
+    printf("Altura: %.2f\n", persona.altura);
+
+    do {
+        printf("Desea modificar algun dato (s-n)?\n");
+        scanf(" %c", &respuesta);
+
+        if (respuesta == 's') {
+            modificar();
+
+            printf("Edad: %d\n", persona.edad);
+            printf("Iniciales: %s\n", persona.iniciales);
+            printf("Tipo de sangre: %s\n", persona.tipoSangre);
+            printf("Altura: %.2f\n", persona.altura);
+        }
+
+    } while (respuesta != 'n');
+
+    return 0;
+}
