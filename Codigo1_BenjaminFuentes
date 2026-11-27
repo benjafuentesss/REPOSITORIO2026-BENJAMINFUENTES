@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+char respuesta;
+
+struct datos {
+    char nombre[30];
+    int edad;
+    int curso;
+};
+
+void cargarDatos() {
+    struct datos estudiante;
+
+    printf("Nombre: ");
+    scanf("%29s", estudiante.nombre);
+
+    printf("Edad: ");
+    scanf("%d", &estudiante.edad);
+
+    printf("Ingrese el año: ");
+    scanf("%d", &estudiante.curso);
+
+    printf("\n--- Datos ingresados ---\n");
+    printf("Alumno: %s\n", estudiante.nombre);
+    printf("Edad: %d\n", estudiante.edad);
+    printf("Año: %d\n", estudiante.curso);
+}
+
+int main() {
+    cargarDatos();
+
+    while (1) {
+        printf("\n¿Desea modificar los datos? (s/n): ");
+        scanf(" %c", &respuesta);
+
+        if (respuesta == 'n') {
+            break;
+        } 
+        else if (respuesta == 's') {
+            cargarDatos();
+        }
+    }
+
+    return 0;
+}
