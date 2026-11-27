@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+
+int numeros[5], posicion, nuevo;
+char respuesta[20];
+
+void modificar() {
+    do {
+        printf("Ingrese la posicion que desea cambiar: ");
+        scanf("%d", &posicion);
+    } while (posicion < 0 || posicion >= 5);
+
+    printf("Ingrese el nuevo numero: ");
+    scanf("%d", &nuevo);
+
+    numeros[posicion] = nuevo;
+
+    printf("El valor de la posicion %d ahora es %d\n", posicion, numeros[posicion]);
+}
+
+int main() {
+    for (int i = 0; i < 5; i++) {
+        printf("Ingrese un numero para la posicion %d: ", i);
+        scanf("%d", &numeros[i]);
+    }
+
+    printf("Los valores ingresados son:\n");
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d\n", numeros[i]);
+    }
+
+    do {
+        printf("Desea CONTINUAR o FINALIZAR el programa?\n");
+        scanf("%19s", respuesta);
+
+        if (strcmp(respuesta, "CONTINUAR") == 0) {
+            modificar();
+        }
+
+    } while (strcmp(respuesta, "FINALIZAR") != 0);
+
+    return 0;
+}
