@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int tabla[4][4] = {
+    {0, 0, 0, 0},
+    {0, 1, 0, 1},
+    {1, 0, 0, 1},
+    {1, 1, 1, 1}
+};
+
+int main() {
+
+    int fila, columna;
+
+    printf("A\tB\tAND\tOR\n");
+
+    for (fila = 0; fila < 4; fila++) {
+        for (columna = 0; columna < 4; columna++) {
+            printf("%d\t", tabla[fila][columna]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
