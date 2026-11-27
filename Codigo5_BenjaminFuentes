@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int numeros[3][2][2];
+
+int main() {
+    int capa, fila, columna;
+
+    for (capa = 0; capa < 3; capa++) {
+        for (fila = 0; fila < 2; fila++) {
+            for (columna = 0; columna < 2; columna++) {
+                printf("Ingrese un numero en la capa %d, fila %d, columna %d:\n", capa, fila, columna);
+                scanf("%d", &numeros[capa][fila][columna]);
+            }
+        }
+    }
+
+    for (capa = 0; capa < 3; capa++) {
+        printf("Capa %d\n", capa);
+
+        for (fila = 0; fila < 2; fila++) {
+            for (columna = 0; columna < 2; columna++) {
+                printf("%d\t", numeros[capa][fila][columna]);
+            }
+            printf("\n");
+        }
+    }
+
+    return 0;
+}
