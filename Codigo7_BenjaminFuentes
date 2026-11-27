@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int compuerta1[4][3] = {
+    {0, 0, 0},
+    {0, 1, 0},
+    {1, 0, 0},
+    {1, 1, 1}
+};
+
+int compuerta2[4][3] = {
+    {0, 0, 0},
+    {0, 1, 1},
+    {1, 0, 1},
+    {1, 1, 1}
+};
+
+int compuerta3[4][3] = {
+    {0, 0, 0},
+    {0, 1, 1},
+    {1, 0, 1},
+    {1, 1, 0}
+};
+
+int compuerta4[4][3] = {
+    {0, 0, 1},
+    {0, 1, 1},
+    {1, 0, 1},
+    {1, 1, 0}
+};
+
+void mostrarTabla(int tabla[4][3], char nombre[]) {
+    printf("\nTabla de verdad %s\n", nombre);
+    printf("A\tB\tS\n");
+
+    for (int fila = 0; fila < 4; fila++) {
+        for (int columna = 0; columna < 3; columna++) {
+            printf("%d\t", tabla[fila][columna]);
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    mostrarTabla(compuerta1, "AND");
+    mostrarTabla(compuerta2, "OR");
+    mostrarTabla(compuerta3, "XOR");
+    mostrarTabla(compuerta4, "NAND");
+
+    return 0;
+}
