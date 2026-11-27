@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int datos[5];
+
+void modificar() {
+    int posicion, valor;
+
+    do {
+        printf("Ingrese la posicion que desea modificar: ");
+        scanf("%d", &posicion);
+    } while (posicion < 0 || posicion >= 5);
+
+    printf("Ingrese el nuevo valor: ");
+    scanf("%d", &valor);
+
+    datos[posicion] = valor;
+
+    printf("El nuevo valor de la posicion %d es %d\n", posicion, datos[posicion]);
+}
+
+int main() {
+    char respuesta;
+    int i;
+
+    for (i = 0; i < 5; i++) {
+        printf("Ingrese el valor de la posicion %d: ", i);
+        scanf("%d", &datos[i]);
+    }
+
+    printf("Los valores ingresados son:\n");
+
+    for (i = 0; i < 5; i++) {
+        printf("%d\n", datos[i]);
+    }
+
+    do {
+        printf("¿Desea terminar el programa? (s-n): ");
+        scanf(" %c", &respuesta);
+
+        if (respuesta == 'n') {
+            modificar();
+        }
+
+    } while (respuesta != 's');
+
+    return 0;
+}
