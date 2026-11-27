@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int numeros[5];
+
+int main() {
+    int posicion;
+
+    for (posicion = 0; posicion < 5; posicion++) {
+        printf("Ingrese un numero:\n");
+        scanf("%d", &numeros[posicion]);
+    }
+
+    for (posicion = 0; posicion < 5; posicion++) {
+        printf("El numero ingresado es: %d\n", numeros[posicion]);
+    }
+
+    return 0;
+}
