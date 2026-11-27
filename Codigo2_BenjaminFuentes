@@ -1,0 +1,57 @@
+#include <stdio.h>
+
+struct alumno {
+    char nombre[30];
+    int edad;
+    int año;
+};
+
+int main() {
+    struct alumno datos[3];
+    char respuesta;
+
+    for (int i = 0; i < 3; i++) {
+        printf("\nAlumno %d\n", i + 1);
+
+        printf("Ingrese nombre:\n");
+        scanf("%29s", datos[i].nombre);
+
+        printf("Ingrese edad:\n");
+        scanf("%d", &datos[i].edad);
+
+        printf("Ingrese año:\n");
+        scanf("%d", &datos[i].año);
+    }
+
+    for (int i = 0; i < 3; i++) {
+        printf("\nAlumno %d\n", i + 1);
+        printf("Nombre: %s\n", datos[i].nombre);
+        printf("Edad: %d\n", datos[i].edad);
+        printf("Año: %d\n", datos[i].año);
+    }
+
+    for (int i = 0; i < 3; i++) {
+        printf("\n¿Quiere modificar el alumno %d? (s-n)\n", i + 1);
+        scanf(" %c", &respuesta);
+
+        if (respuesta == 's') {
+            printf("Ingrese nombre:\n");
+            scanf("%29s", datos[i].nombre);
+
+            printf("Ingrese edad:\n");
+            scanf("%d", &datos[i].edad);
+
+            printf("Ingrese año:\n");
+            scanf("%d", &datos[i].año);
+        }
+    }
+
+    for (int i = 0; i < 3; i++) {
+        printf("\nAlumno %d\n", i + 1);
+        printf("Nombre: %s\n", datos[i].nombre);
+        printf("Edad: %d\n", datos[i].edad);
+        printf("Año: %d\n", datos[i].año);
+    }
+
+    return 0;
+}
