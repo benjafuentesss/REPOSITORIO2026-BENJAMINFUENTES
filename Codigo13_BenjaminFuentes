@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int numeros[10];
+int suma = 0;
+
+void calcularPromedio(float total) {
+    float promedio;
+
+    promedio = total / 10;
+    printf("El promedio de los valores es: %.1f\n", promedio);
+}
+
+int main() {
+    int i, j, auxiliar;
+
+    printf("Ingrese los valores del vector:\n");
+
+    for (i = 0; i < 10; i++) {
+        printf("Valor de la posicion %d:\n", i);
+        scanf("%d", &numeros[i]);
+
+        suma += numeros[i];
+    }
+
+    for (i = 0; i < 9; i++) {
+        for (j = i + 1; j < 10; j++) {
+            if (numeros[i] > numeros[j]) {
+                auxiliar = numeros[i];
+                numeros[i] = numeros[j];
+                numeros[j] = auxiliar;
+            }
+        }
+    }
+
+    printf("Valores ordenados:\n");
+
+    for (i = 0; i < 10; i++) {
+        printf("%d\n", numeros[i]);
+    }
+
+    calcularPromedio(suma);
+
+    return 0;
+}
